@@ -1390,9 +1390,10 @@ class Channel(AbstractChannel):
                     tag refers to an delivered message, and raise a
                     channel exception if this is not the case.
         """
-        return self.send_method(
-            spec.Basic.Ack, argsig, (delivery_tag, multiple),
-        )
+        return None
+        # return self.send_method(
+            # spec.Basic.Ack, argsig, (delivery_tag, multiple),
+        # )
 
     def basic_cancel(self, consumer_tag, nowait=False, argsig='sb'):
         """End a queue consumer.
